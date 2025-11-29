@@ -12,14 +12,16 @@ int main(int, char **) {
                "cpp-design-patterns/creational-patterns/factory/"
                "two-factor-authentication ####\n\n";
 
+  // Client code uses the Creator interface.
+  // The concrete creator determines which product is created.
   std::unique_ptr<TwoFactorAuthentication> twoFactorAuth1 =
       std::make_unique<EmailAuthentication>();
 
   std::unique_ptr<TwoFactorAuthentication> twoFactorAuth2 =
       std::make_unique<MessageAuthentication>();
 
-  twoFactorAuth1->verify();
-  twoFactorAuth2->verify();
+  twoFactorAuth1->verify(); // Internally uses EmailAuthenticationMethod
+  twoFactorAuth2->verify(); // Internally uses MessageAuthenticationMethod
 
   std::cout << "\n#### "
                "cpp-design-patterns/creational-patterns/factory/"

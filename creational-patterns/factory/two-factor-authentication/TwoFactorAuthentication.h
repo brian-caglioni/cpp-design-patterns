@@ -9,7 +9,8 @@ class AuthenticationMethod;
 class TwoFactorAuthentication {
 public:
   virtual ~TwoFactorAuthentication();
-  virtual std::unique_ptr<AuthenticationMethod> authMethod() const = 0;
+  virtual std::unique_ptr<AuthenticationMethod>
+  authMethod() const = 0; // Factory method
 
   void verify() const;
 };
