@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10.0)
+
 project(abstract-factory VERSION 0.1.0 LANGUAGES C CXX)
 
-add_executable(abstract-factory main.cpp)
-
+add_subdirectory(authentication-and-notification)
